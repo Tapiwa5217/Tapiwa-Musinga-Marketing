@@ -1,0 +1,179 @@
+@import "utilities";
+@import "generals";
+
+body {
+    
+
+    #contact-section {
+       //background-color: #fff;
+     //   padding: 30px 0 30px 0;
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: $secondary-color;
+            padding: 50px 0;
+            text-transform: uppercase;
+        }
+
+        #contact-body {
+
+
+            #contact-information {
+                background-image: linear-gradient(to left, #5998c5bb,#5998c5bb), url('../images/contact\ me.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                padding: 40px;
+
+                h2 {
+                    font-size: 1.3rem;
+                    margin: 30px 0;
+                    font-weight: 400;
+                    color: #ddd;
+                }
+
+                #info-items {
+
+
+                    .info-item {
+                        @include flex(row,flex-start,center);
+                        margin: 30px 0;
+                        text-shadow: 0 0 1px $secondary-color;
+
+                        i {
+                            font-size: 20px;
+                            margin-right: 10px;
+                            color: #fff;
+                        }
+
+                        .details {
+                            
+                            h4 {
+                                font-size: .9rem;
+                                color: #eee;
+                            }
+
+                            p {
+                                color: $light-text;
+                                color: #ddd;
+                            }
+                        } 
+                    }
+                }
+            }
+
+            #contact-form {
+                padding: 50px 30px;
+                background-color: #fff;
+
+                h2 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    color: $light-text;
+                    margin-bottom: 30px;
+                    font-size: .9rem;
+                }
+
+                form {
+                    @include flex(column,center,flex-start);
+
+                    label {
+                        color: $light-text;
+                        font-size: .9rem;
+                    }
+
+                    input {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        padding: 15px;
+                        border: none;
+                        box-shadow: 0 0 1px $secondary-color;
+                        transition: 1s ease;
+                        
+                        &:hover {
+                            box-shadow: 0 0 5px $brand-color;
+                        }
+                    }
+
+                    textarea {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        padding: 15px;
+                        border: none;
+                        box-shadow: 0 0 1px $secondary-color;
+                        transition: 1s ease;
+
+                        &:hover {
+                            box-shadow: 0 0 5px $brand-color;
+                        }
+                    }
+
+                    button {
+                        background-color: $brand-color;
+                        width: 100%;
+                        padding: 15px 30px;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        text-align: center;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        transition: 1s ease;
+
+                        &:hover {
+                            box-shadow: 0 0 5px $brand-color;
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #map-section {
+        margin: 50px 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            background-color: #5998c525;
+            width: 100vw;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+
+        iframe {
+            width: 100vw;
+            height: 400px;
+
+        }
+    }
+}
+
+@include tabletScreen {
+    body {
+    
+        #contact-section {
+        
+            padding: 0 50px;
+
+            #contact-body {
+                @include flex(row,center,center);
+    
+                #contact-information {
+                    height: 573px;
+                }
+                #contact-form {
+                    height: 573px;
+                }
+        }
+    }
+}
+}

@@ -1,0 +1,595 @@
+@import "generals";
+@import "utilities";
+@import "contact";
+@import "blog";
+@import "article";
+
+body {
+
+    header {
+        @include flex(row,space-between,center);
+        padding: 20px;
+        position: sticky;
+        top: -1px;
+        z-index: 100;
+        background-color: $tertiary-color;
+
+        #logo-header-section {
+
+            img {
+                width: 120px;
+            }
+        }
+
+        #nav-header-section {
+
+            #hamburger-menu {
+                border: none;
+                outline: none;
+
+                i {
+                    font-size: 30px;
+                    color: $secondary-color;
+                }
+            }
+
+            nav {
+                width: 100%;
+                position: absolute;
+              //  background-color: darken($tertiary-color,5);
+              background-color: $tertiary-color;
+              box-shadow: 0 0 5px darken($tertiary-color,10);
+                left: 0;
+                z-index: 50;
+                top: 114px;
+                height: 0;
+                overflow: hidden;
+                transform: translateY(-20px);
+                transition: all 1s ease ;
+               // border-bottom-right-radius: 50%;
+
+               // &.open {
+               //     height: initial;
+              //  }
+
+                ul {
+                    list-style-type: none;
+                    padding: 30px;
+
+                    li {
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        padding: 10px 0;
+
+                        a {
+                            text-decoration: none;
+                            color: $secondary-color;
+                            font-size: 1.3rem;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #hero-section {
+
+        #hero-image {
+            display: none;
+        }
+
+        #hero-content {
+            padding : 0 30px;
+            margin: 30px 0;
+
+            h1 {
+               // text-align: center;
+               font-size: 2.9rem;
+
+                .small-text {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+
+                .less-text {
+                    font-weight: 500;
+                    font-size: 2.8rem;
+                }
+            }
+
+            .cta-button {
+                display: inline-block;
+                margin: 30px 0;
+                @extend %cta-btn;
+            }
+        }
+    }
+
+    #services-section {
+        background-color: #fff;
+
+        h2 {
+            text-align: center;
+            color: $secondary-color;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+
+        #services-boxes {
+            margin: 50px 0;
+           // padding: 0 30px;
+
+            .service-box {
+                margin: 20px 0;
+                padding: 30px;
+                text-align: center;
+               // background-color: $tertiary-color;
+
+               i {
+                   font-size: 35px;
+                   color: $brand-color;
+               }
+
+               h2 {
+                   margin: 10px 0;
+               }
+
+               p {
+                   color: $light-text;
+               }
+            }
+        }
+    }
+
+    #small-blog {
+        padding: 30px;
+
+        img {
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        #small-blog-text {
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        p {
+            color: $light-text;
+        }
+
+        a {
+            @extend %cta-btn;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+    }
+    }
+
+    #testimonials-section {
+        background-color: #fff;
+
+        h2 {
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #testimonials-boxes {
+            padding-right: 30px;
+            margin-right: 10px;
+
+            .testimonial-box {
+                background-color: $tertiary-color;
+                margin: 30px 0;
+                padding: 30px 0 30px 20px;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+
+                blockquote {
+                    padding: 0 10px;
+                    color: $light-text;
+                }
+
+                .client-info {
+                    @include flex(row,flex-start,center);
+                    margin: 20px 0;
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .client-details {
+                        margin-left: 10px;
+
+                        h4 {
+                            color: $light-text;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #portfolio-section {
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+
+        #work-boxes {
+            padding: 0 30px;
+
+
+            .work-box {
+                margin: 50px 0;
+                @include flex(column,center,center);
+
+                img {
+                    width: 100%;
+                }
+
+                h3 {
+                    margin: 15px 0;
+                }
+
+                p {
+                    text-align: center;
+                    color: $light-text;
+                }
+
+                a {
+                    text-decoration: none;
+                    display: inline-block;
+                    margin: 20px 0;
+                    @extend %cta-btn;
+                }
+            }
+        }
+    }
+
+    #cta-banner {
+        background-color: #fff;
+        @include flex(column,center,center);
+        padding: 30px 0;
+
+        p {
+            color: $secondary-color;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            @extend %cta-btn;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    }
+
+    footer {
+        
+        #footer-content {
+            @include flex(column,center,center);
+
+            #footer-logo {
+                margin: 30px 0;
+                img {
+                    width: 50px;
+                }
+
+            }
+
+            #footer-nav {
+                a {
+                    color: $secondary-color;
+                   // text-decoration: none;
+                    padding: 15px;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    display: block;
+                    font-weight: 500;
+                }
+            }
+
+            #footer-socials {
+                
+                a {
+                    color: $secondary-color;
+                    width: 50px;
+                    height: 50px;
+                    position: relative;
+                    box-shadow: 0 0 4px $secondary-color;
+                    display: inline-block;
+                    border-radius: 50%;
+                    margin: 5px;
+                    margin-top: 30px; 
+                    
+                    i {
+                        font-size: 1.5rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+
+           
+        }
+
+        p {
+            text-align: center;
+            color: $light-text;
+            font-size: .9rem;
+            margin: 30px;
+        }
+    }
+}
+
+@include tabletScreen {
+    body {
+        .section-title {
+            font-size: 2.5rem;
+        }
+
+        header {
+            
+            #nav-header-section {
+    
+                #hamburger-menu {
+                    display: none;
+    
+                }
+    
+                nav {
+                    width: unset;
+                    position: unset;
+                    background-color: unset;
+                  box-shadow: unset;
+                    height: unset;
+                    overflow: unset;
+                    transform: translateY(0);
+                    transition: unset;
+                    border-bottom-right-radius: unset;
+    
+                    ul {
+                        padding: 0 30px;
+
+                        li {
+                            margin: 0 20px;
+                            display: inline-block;
+
+                            a {
+                                font-size: 1.1rem;
+                                color: $light-text;
+
+                                &:hover {
+                                    color: $brand-color;
+                                    transition: .5s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        #hero-section {
+
+        @include flex(row,center,center);
+        background-image: url('../images/hero-image.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0px 0px;
+    
+            #hero-image {
+                display: block;
+                width: 40%;
+            }
+    
+            #hero-content {
+                padding : 0 30px;
+                margin: 30px 0;
+    
+            }
+        }
+    
+        #services-section {
+
+    
+            #services-boxes {
+                margin: 50px 0;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+    
+                .service-box {
+                   
+                    &:nth-of-type(2) {
+                        background-color: $tertiary-color;
+                        border-radius: 5px;
+
+                        p {
+                            color: darken($light-text,20);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    
+        #small-blog {
+            @include flex(row,center,center);
+    
+            img {
+                width: 50%;
+            }
+        }
+    
+        #testimonials-section {
+    
+            #testimonials-boxes {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                padding: 0;
+    
+                .testimonial-box {
+                    margin: 30px ;  
+                    border-top-left-radius: 30px;
+                }
+            }
+        }
+    
+        #portfolio-section {
+    
+            #work-boxes {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-gap: 20px;
+            }
+        }
+    
+        #cta-banner {
+            @include flex(row,center,center);
+    
+            p {
+                margin-right: 30px;
+            }
+    
+            a {
+                margin-top: 0;
+            }
+        }
+    
+        footer {
+            padding: 0 30px;
+            #footer-content {
+                @include flex(row,space-around,center);
+                margin: 50px 0;
+    
+                #footer-logo {
+                    margin: 0;
+                }
+
+                #footer-nav {
+                    a {
+                        display: inline-block;
+
+                        &:hover{
+                            color: $light-text;
+                        }
+                    }
+                }
+    
+                #footer-socials {
+                    
+                    a {
+                     
+                        margin: 0 5px;
+                        transition: .5s ease;
+
+                        &:hover {
+                           // transform: scale(1.2);
+                           transform: translateY(-8px);
+                        }
+                    }
+                }
+    
+               
+            }
+    
+            p {
+                text-align: center;
+                color: $light-text;
+                font-size: .9rem;
+                margin: 30px;
+            }
+        }
+    }
+}
+
+@include desktopScreen {
+    body {
+    
+        #hero-section {
+        background-position: 100px 0px;
+    
+            #hero-image {
+                width: 40%;
+            }
+    
+            #hero-content {
+    
+                h1 {
+                    font-size: 3.5rem;
+     
+                 }
+            }
+        }
+    
+        #services-section {
+
+    
+            #services-boxes {
+                grid-gap: 30px;
+            }
+        }
+    
+        #small-blog {
+            @include flex(row,center,center);
+    
+            img {
+                width: 50%;
+            }
+
+            #small-blog-text {
+                margin: 0 30px;
+            }
+        }
+    
+        #testimonials-section {
+    
+            #testimonials-boxes {
+              
+                padding: 0 30px;
+                margin-top: 50px;
+            }
+        }
+    
+        #portfolio-section {
+    
+            #work-boxes {
+                grid-gap: 40px;
+                margin: 50px 0;
+            }
+        }
+    
+        #cta-banner {
+    
+            p {   
+                font-size: 1.3rem;
+            }
+        }
+
+        footer {
+
+            #footer-content {
+                #footer-nav {
+                    a {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+           
+        }
+    
+    }
+}

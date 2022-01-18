@@ -1,0 +1,38 @@
+@import "utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $tertiary-color;
+    font-size: 16px;
+}
+
+h1 {
+    font-weight: 700;
+    color: $secondary-color;
+}
+
+h2, h3, h4 {
+    color: $secondary-color;
+}
+
+.top-wave {
+    margin-top: -2px;
+}
+
+.bottom-wave {
+    margin-bottom: -10px;
+}

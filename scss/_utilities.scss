@@ -1,0 +1,56 @@
+
+$brand-color: #5998C5;
+
+$secondary-color: #252627;
+
+$tertiary-color: rgb(243, 244, 245);
+
+$light-text: #666;
+
+%cta-btn {
+    background-color: $brand-color;
+    padding: 15px 30px;
+    color: #fff;
+    //text-shadow: 0 0 1px $secondary-color;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: $brand-color;
+        outline: 2px solid $brand-color;
+        font-weight: 600;
+        transition: .5s ease;
+    }
+}
+
+@mixin  flex($direction,$justify,$align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin tabletScreen {
+    @media screen and (min-width: 750px) {
+        @content;
+    }
+}
+
+@mixin desktopScreen {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+//<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+ // <path fill="#f3f4f5" fill-opacity="1" d="M0,224L1440,96L1440,0L0,0Z"></path>
+//</svg>
+
+
+//<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+//  <path fill="#f3f4f5" fill-opacity="1" d="M0,224L1440,96L1440,320L0,320Z"></path>
+//</svg>

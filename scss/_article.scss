@@ -1,0 +1,146 @@
+@import "utilities";
+@import "generals";
+
+body {
+    article {
+
+        a {
+            text-decoration: none;
+            color: $brand-color;
+        }
+
+        .indent {
+            margin:  0;
+            display: block;
+        }
+
+        .article-main-header {
+            font-size: 1.8rem;
+            text-align: center;
+            color: $secondary-color;
+            padding: 2%;
+        }
+
+        .article-image-section {
+            margin: 20px 0;
+            @include flex(row,center,center);
+            
+            .article-main-image {
+                width: 100%;
+                
+            }
+        }
+
+        .intro-text {
+            padding: 5%;
+            color: $light-text;
+        }
+
+        .article-points {
+
+            padding: 5%;
+
+            h2 {
+                margin: 20px 0;
+            }
+
+            h3 {
+                margin: 20px 0;
+            }
+
+            p {
+                margin-bottom: 50px;
+                color: $light-text;
+            }
+        }
+
+        .article-cta {
+            background-color: #fff;
+            padding: 30px;
+            @include flex(column,center,center);
+
+            h2{
+                text-align: center;
+            }
+
+            a {
+                margin-top: 20px;
+                display: inline-block;
+                @extend %cta-btn;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@include tabletScreen {
+
+    body {
+        article {
+        
+            .article-main-header {
+                padding: 5% 15%;
+            }
+    
+            .article-image-section {
+                margin: 20px 0;
+                
+                .article-main-image {
+                    width: 90%;        
+                }
+            }
+    
+            .intro-text {
+                padding: 5% 15%;
+            }
+    
+            .article-points {
+              padding: 5% 15%;
+
+            }
+    
+        }
+    }
+}
+
+@include desktopScreen {
+
+    body {
+        article {
+        
+            .article-main-header {
+                padding: 5% 20%;
+                font-size: 2.5rem;
+            }
+    
+            .article-image-section {
+                
+                .article-main-image {
+                    width: 80%;        
+                }
+            }
+    
+            .intro-text {
+                padding: 5% 20%;
+            }
+    
+            .article-points {
+              padding: 5% 20%;
+
+            }
+    
+            .article-cta {
+                @include flex(row,center,center);
+    
+                h2{
+                    text-align: unset;
+                }
+    
+                a {
+                    margin-top: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
