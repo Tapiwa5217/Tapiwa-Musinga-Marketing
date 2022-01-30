@@ -708,6 +708,7 @@ body #hero-section #hero-content h1 .less-text {
 body #hero-section #hero-content .cta-button {
   display: inline-block;
   margin: 30px 0;
+  text-decoration: none;
 }
 
 body #services-section {
