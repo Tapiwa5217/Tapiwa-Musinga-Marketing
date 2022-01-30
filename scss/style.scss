@@ -102,6 +102,7 @@ body {
                 display: inline-block;
                 margin: 30px 0;
                 @extend %cta-btn;
+                text-decoration: none;
             }
         }
     }
